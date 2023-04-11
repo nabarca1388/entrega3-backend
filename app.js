@@ -23,15 +23,15 @@ servidor.get('/producto/:id?', (req, res) => {
     res.json(product.getId(id));
 });
 
-/*
+
 servidor.get('/products', (req, res) => {
     res.json(product.get())
 })
 
-servidor.get('/products?limit=5', (req, res) => {
-    res.json(product.get())
+servidor.get('/products/five', (req, res) => {
+    res.json(product.gete())
 })
-*/
+
 servidor.listen(PUERTO, () => {
     console.log(`Servidor Express activo en puerto ${PUERTO}`);
 });
