@@ -122,11 +122,11 @@ class ManagerUsuarios {
         }
     }
 
-    gete = () => {
+    gete = (cantidad) => {
         const productos = this.readFile();
         const productosFive = [];
         
-        for(let i = 0; i < 5; i++){
+        for(let i = 0; i < cantidad; i++){
             productosFive.push(productos[i]);
         }
         

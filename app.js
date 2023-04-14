@@ -28,8 +28,9 @@ servidor.get('/products', (req, res) => {
     res.json(product.get())
 })
 
-servidor.get('/products/five', (req, res) => {
-    res.json(product.gete())
+servidor.get('/productos', (req, res) => {
+    let cantidad = req.query.limit
+    res.json(product.gete(cantidad))
 })
 
 servidor.listen(PUERTO, () => {
