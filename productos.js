@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-class ManagerUsuarios {
+class ProductManager {
     static id = 0;
 
     constructor(ruta) {
@@ -11,7 +11,7 @@ class ManagerUsuarios {
 
 
     getProductId() {
-        return ManagerUsuarios.id + 1;
+        return ProductManager.id + 1;
     }
 
 
@@ -74,7 +74,7 @@ class ManagerUsuarios {
 
         if (this.usuariosObj.length === 0) {
             const productoNuevo = {
-                id: ManagerUsuarios.id = this.getProductId(),
+                id: ProductManager.id = this.getProductId(),
                 title: obj.title,
                 description: obj.description,
                 price: obj.price,
@@ -94,7 +94,7 @@ class ManagerUsuarios {
         }
 
         const productoNuevo = {
-            id: ManagerUsuarios.id = this.getProductId(),
+            id: ProductManager.id = this.getProductId(),
             title: obj.title,
             description: obj.description,
             price: obj.price,
@@ -135,9 +135,9 @@ class ManagerUsuarios {
 
 }
 
-module.exports = ManagerUsuarios;
+module.exports = ProductManager;
 
-const manager = new ManagerUsuarios('./productos.json');
+const manager = new ProductManager('./productos.json');
 const products = [
     {
         title: 'Computadora',

@@ -12,10 +12,6 @@ servidor.use(express.urlencoded({ extended: true }));
 
 const product = new productos('productos.json');
 
-servidor.get('/', (req, res) => {
-    res.send('Servidor Express');
-});
-
 
 
 servidor.get('/producto/:id?', (req, res) => {
@@ -25,12 +21,14 @@ servidor.get('/producto/:id?', (req, res) => {
 
 
 servidor.get('/products', (req, res) => {
-    res.json(product.get())
-})
-
-servidor.get('/productos', (req, res) => {
     let cantidad = req.query.limit
-    res.json(product.gete(cantidad))
+
+    if(cantidad == undefined){
+        res.json(product.get())
+    }else{
+        res.json(product.gete(cantidad))
+    }
+    
 })
 
 servidor.listen(PUERTO, () => {
