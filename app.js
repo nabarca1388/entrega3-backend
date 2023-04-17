@@ -34,4 +34,3 @@ servidor.get('/products', (req, res) => {
 servidor.listen(PUERTO, () => {
     console.log(`Servidor Express activo en puerto ${PUERTO}`);
 });
-
